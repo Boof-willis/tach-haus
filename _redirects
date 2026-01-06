@@ -2,8 +2,3 @@
 
 # Redirect /home to the root
 /home / 301
-
-# Ensure trailing slashes are handled consistently
-/terms-of-service /terms-of-service.html 200
-/privacy-policy /privacy-policy.html 200
-
