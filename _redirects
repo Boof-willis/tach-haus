@@ -7,6 +7,3 @@
 /terms-of-service /terms-of-service.html 200
 /privacy-policy /privacy-policy.html 200
 
-# 404 fallback
-/* /index.html 404
-
