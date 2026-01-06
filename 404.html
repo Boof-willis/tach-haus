@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tach Haus - Page Not Found</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/favicons/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/favicons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/favicons/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/favicons/site.webmanifest">
+
+    <!-- Preload Akira font -->
+    <link rel="preload" href="fonts/Akira-Expanded-Demo.otf" as="font" type="font/otf" crossorigin>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Fonts */
+        @font-face {
+            font-family: 'Akira Expanded Demo';
+            src: url('fonts/Akira-Expanded-Demo.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: #000;
+            overflow-x: hidden;
+        }
+
+        .error-container {
+            position: relative;
+            min-height: 100vh;
+            background-image: url('https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/footer%20car%20interior.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .error-container::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 1;
+        }
+
+        .error-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        .error-code {
+            font-family: 'Akira Expanded Demo', 'Impact', 'Franklin Gothic Bold', 'Arial Black', sans-serif;
+            font-size: clamp(8rem, 20vw, 14rem);
+            font-weight: normal;
+            color: #F3E11B;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 0.9;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 60px rgba(243, 225, 27, 0.3);
+        }
+
+        .error-title {
+            font-family: 'Akira Expanded Demo', 'Impact', 'Franklin Gothic Bold', 'Arial Black', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: normal;
+            color: #F3E11B;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .error-message {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .error-message strong {
+            color: #F3E11B;
+            font-weight: 600;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: #E53935;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(229, 57, 53, 0.4);
+        }
+
+        .home-button:hover {
+            background-color: #C62828;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(229, 57, 53, 0.5);
+        }
+
+        .racing-flag {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            width: 120px;
+            height: auto;
+            opacity: 0.8;
+            z-index: 10;
+        }
+
+        .logo {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            width: 100px;
+            height: auto;
+            z-index: 10;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: clamp(5rem, 25vw, 8rem);
+            }
+
+            .error-title {
+                font-size: clamp(1.2rem, 5vw, 1.8rem);
+            }
+
+            .error-message {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .racing-flag {
+                width: 80px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .logo {
+                width: 80px;
+                top: 1rem;
+                left: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-content {
+                padding: 1rem;
+            }
+
+            .home-button {
+                padding: 0.875rem 2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <!-- Logo -->
+        <a href="/">
+            <img src="https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/tach%20haus%20logo.webp" alt="Tach Haus Logo" class="logo">
+        </a>
+
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Wrong Turn</h1>
+            <p class="error-message">
+                Looks like you've veered off course.<br>
+                This page doesn't exist — but the <strong>movement</strong> continues.
+            </p>
+            <a href="/" class="home-button">Back to the Rally</a>
+        </div>
+
+        <!-- Racing Flag -->
+        <img src="https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/racing%20flag.svg" alt="Racing Flag" class="racing-flag">
+    </div>
+</body>
+</html>
+
