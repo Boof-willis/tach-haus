@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tach Haus - Terms of Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: #000;
+            overflow-x: hidden;
+        }
+
+        .tos-container {
+            position: relative;
+            min-height: 100vh;
+            background-image: url('https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/footer%20car%20interior.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .tos-container::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(3px);
+            z-index: 1;
+        }
+
+        .back-link {
+            position: relative;
+            z-index: 10;
+            display: inline-block;
+            margin: 1.5rem 0 0 2rem;
+            color: #F3E11B;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            text-decoration: underline;
+        }
+
+        .header {
+            position: relative;
+            z-index: 10;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Akira Expanded Demo', 'Impact', 'Franklin Gothic Bold', 'Arial Black', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: normal;
+            color: #F3E11B;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 5;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem 2rem;
+        }
+
+        .tos-content {
+            color: white;
+        }
+
+        .tos-content h2 {
+            font-family: 'Akira Expanded Demo', 'Impact', 'Franklin Gothic Bold', 'Arial Black', sans-serif;
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #F3E11B;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .tos-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .tos-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .tos-content p {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .tos-content ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .tos-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #F3E11B;
+            font-weight: 600;
+        }
+
+        .last-updated {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(243, 225, 27, 0.3);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tos-container {
+                background-attachment: scroll;
+            }
+
+            .back-link {
+                margin: 1rem 0 0 1rem;
+                font-size: 0.9rem;
+            }
+
+            .content-wrapper {
+                margin: 1rem;
+                padding: 2rem 1.5rem 3rem 1.5rem;
+            }
+
+            .header {
+                padding: 1.5rem 1rem;
+            }
+
+            .tos-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .tos-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .tos-content p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-wrapper {
+                margin: 0.5rem;
+                padding: 1.5rem 1rem 2rem 1rem;
+            }
+
+            .tos-content h2 {
+                font-size: 1.2rem;
+            }
+
+            .tos-content p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tos-container">
+        <a href="/" class="back-link">← Back to Home</a>
+        
+        <header class="header">
+            <h1>Terms of Service</h1>
+            <p>Movement with Purpose // Legal Framework</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="tos-content">
+                <h2>Acceptance of Terms</h2>
+                <p>By accessing or using any Tach Haus LLC and/or The Tach Haus Foundation websites, services, events, or participating in any Rally experiences, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing our services.</p>
+
+                <h2>About Tach Haus</h2>
+                <p><span class="highlight">Tach Haus LLC</span> operates as a motorsport lifestyle brand and event organizer, while <span class="highlight">The Tach Haus Foundation</span> operates as a registered 501(c)(3) nonprofit organization. Together, we create experiences that combine automotive passion with charitable giving.</p>
+
+                <h2>Rally Participation</h2>
+                <h3>Eligibility Requirements</h3>
+                <p>Participation in REV Rally and other Tach Haus experiences is subject to:</p>
+                <ul>
+                    <li>Meeting current eligibility requirements as determined by Tach Haus LLC</li>
+                    <li>Possession of valid driver's license and insurance</li>
+                    <li>Vehicle meeting safety and performance standards</li>
+                    <li>Agreement to all terms, conditions, and waivers</li>
+                    <li>Payment of all applicable fees</li>
+                </ul>
+
+                <h3>Event Modifications</h3>
+                <p>All rally routes, schedules, event details, and charitable beneficiaries are subject to change at the discretion of Tach Haus LLC and/or The Tach Haus Foundation. We reserve the right to modify, postpone, or cancel events due to weather, safety concerns, or other circumstances beyond our control.</p>
+
+                <h2>Intellectual Property</h2>
+                <p>All content, names, logos, imagery, designs, and materials associated with Tach Haus are the intellectual property of <span class="highlight">Tach Haus LLC</span> and/or <span class="highlight">The Tach Haus Foundation</span>. This includes but is not limited to:</p>
+                <ul>
+                    <li>Tach Haus name, logos, and branding elements</li>
+                    <li>REV Rally name and associated materials</li>
+                    <li>Website content, photography, and graphics</li>
+                    <li>Event concepts and promotional materials</li>
+                </ul>
+                <p>These materials may not be copied, reproduced, distributed, or used without prior written consent.</p>
+
+                <h2>Liability and Risk</h2>
+                <p>Participation in automotive events carries inherent risks. By participating in any Tach Haus experience, you acknowledge and assume all risks associated with motor vehicle operation and event participation. Tach Haus LLC and The Tach Haus Foundation, their officers, directors, employees, and volunteers are not liable for any injury, damage, or loss that may occur.</p>
+
+                <h2>Sponsorship and Partnerships</h2>
+                <p>Sponsorship opportunities are available subject to approval and agreement to specific partnership terms. All sponsorship agreements are separate contracts that supplement these Terms of Service.</p>
+
+                <h2>Charitable Giving</h2>
+                <p>Donations made to The Tach Haus Foundation are tax-deductible to the extent permitted by law. The Foundation reserves the right to direct charitable giving to beneficiaries aligned with our mission and values.</p>
+
+                <h2>Privacy and Data</h2>
+                <p>We respect your privacy and handle personal information in accordance with our Privacy Policy. By using our services, you consent to the collection and use of information as outlined in our Privacy Policy.</p>
+
+                <h2>Code of Conduct</h2>
+                <p>All participants are expected to conduct themselves with respect, integrity, and in accordance with our community values. Behavior that is deemed inappropriate, unsafe, or contrary to our mission may result in removal from events and prohibition from future participation.</p>
+
+                <h2>Dispute Resolution</h2>
+                <p>Any disputes arising from these Terms of Service or participation in Tach Haus experiences shall be resolved through binding arbitration in accordance with applicable state laws.</p>
+
+                <h2>Modifications to Terms</h2>
+                <p>Tach Haus LLC reserves the right to modify these Terms of Service at any time. Continued use of our services after modifications constitutes acceptance of the updated terms.</p>
+
+                <h2>Contact Information</h2>
+                <p>For questions regarding these Terms of Service, please contact us through our official channels. All communications should be directed to authorized Tach Haus representatives.</p>
+
+                <div class="last-updated">
+                    <p>Last Updated: January 2025</p>
+                    <p>© 2025 Tach Haus LLC & The Tach Haus Foundation. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

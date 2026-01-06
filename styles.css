@@ -1,0 +1,1807 @@
+/* Custom Fonts */
+@font-face {
+    font-family: 'Akira Expanded Demo';
+    src: url('fonts/Akira-Expanded-Demo.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Critical Webflow base styles */
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 38px;
+    line-height: 44px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 36px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+h5 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+h6 {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #3898EC;
+    text-decoration: underline;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 40px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.w-button {
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: #3898EC;
+    color: white;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+/* Global Styles and Imports */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Accessibility: Skip Links - Screen reader compliant */
+.skip-navigation {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+}
+
+.skip-link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    background: #000;
+    color: #fff;
+    padding: 12px 24px;
+    z-index: 99999;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid #F3E11B;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    opacity: 1;
+    visibility: visible;
+    top: 10px;
+    outline: 3px solid #F3E11B;
+    outline-offset: 2px;
+}
+
+.skip-link:hover:focus {
+    background: #333;
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* Show skip navigation container on focus */
+.skip-navigation:focus-within {
+    top: 0;
+}
+
+/* Main navigation - restore original styling and functionality */
+.main-navigation {
+    position: relative;
+    z-index: 1000;
+}
+
+/* Explicitly hide skip links when not focused */
+.skip-link:not(:focus):not(:focus-visible) {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Accessibility: Focus indicators */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #F3E11B;
+    outline-offset: 2px;
+}
+
+/* Webflow Global Styles */
+.w-embed html,
+.w-embed body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.w-embed {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Section 1: Hero Section Styles */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(106deg, rgba(147, 147, 147, 0.24) 3.02%, rgba(0, 0, 0, 0.60) 99.08%), url('https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/tachhaus%20desktop%20hero.avif') lightgray 50% / cover no-repeat;
+    background-attachment: fixed;
+}
+
+.nav-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+}
+
+.logo {
+    width: 125px;
+    height: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #F3E11B;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #F3E11B;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+    transition: all 0.3s ease;
+    margin-left: auto;
+    z-index: 20;
+    position: relative;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    display: block;
+}
+
+.hamburger span:nth-child(3) {
+    display: none;
+}
+
+.hamburger.active span {
+    background: black;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+    transform: rotate(-45deg) translate(0px, -7px);
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 15;
+    overflow: hidden;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu.active {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-menu li {
+    margin: 2rem 0;
+}
+
+.mobile-menu .nav-link {
+    display: block;
+    color: #000;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.mobile-menu .nav-link:hover,
+.mobile-menu .nav-link:active {
+    color: #F3E11B;
+    transform: scale(1.1);
+}
+
+.mobile-menu .nav-link::after {
+    display: none;
+}
+
+.brand-logo {
+    position: absolute;
+    bottom: 2rem;
+    right: 3rem;
+    z-index: 10;
+    width: 175px;
+    height: auto;
+    opacity: 0.8;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    padding: 0 2rem;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-out 0.5s forwards;
+}
+
+.hero-title {
+    font-family: 'Akira Expanded Demo', Impact, 'Franklin Gothic Bold', 'Arial Black', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 72px);
+    font-weight: 400;
+    color: #F3E11B;
+    text-transform: uppercase;
+    letter-spacing: 3.6px;
+    margin-bottom: 1.5rem;
+    line-height: 61.2px;
+}
+
+.hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 300;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.4;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #CC0000;
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: #AA0000;
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    animation: bounce 2s infinite;
+}
+
+.scroll-arrow {
+    width: 2px;
+    height: 40px;
+    background: white;
+    margin: 0 auto 10px auto;
+    opacity: 0.7;
+}
+
+.scroll-text {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+/* Enhanced background with parallax effect */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+    z-index: 1;
+}
+
+/* Section 2: Featured Video Section Styles */
+.featured-video-section {
+    position: relative;
+    width: 100%;
+    background-color: #EDEDEC;
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-wrapper {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.video-container-main {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.featured-video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+/* Section 3: Give Back Section Styles */
+.give-back-section {
+    position: relative;
+    background: #f8f8f8;
+    padding: 0 0 4rem 0;
+    overflow: hidden;
+}
+
+.header-banner {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.banner-image {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    display: block;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2rem;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 3rem 4rem 3rem;
+    align-items: start;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.content-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.content-text p {
+    margin-bottom: 1.5rem;
+}
+
+.content-text p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight-text {
+    font-weight: 600;
+}
+
+.founders-message {
+    font-style: italic;
+    color: #666;
+    border-left: 3px solid #F3E11B;
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+.founders-link {
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.founders-link a {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #F3E11B;
+    background: transparent;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.video-button {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #F3E11B;
+    background: transparent;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.video-button:hover {
+    background: #F3E11B;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(243, 225, 27, 0.3);
+}
+
+.founders-link a:hover {
+    background: #F3E11B;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(243, 225, 27, 0.3);
+}
+
+/* Video Popup Styles */
+.video-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.video-popup.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.video-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.3s ease;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #F3E11B;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.close-button:hover {
+    background: #fff;
+    transform: scale(1.1);
+}
+
+.right-content {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100%;
+    padding-top: 1rem; /* Better vertical alignment with text */
+}
+
+.feature-image {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* Removed hover effect to keep section grounded */
+
+/* Logo Banner Styles */
+.logo-banner {
+    max-width: 1400px;
+    margin: 1.5rem auto 0 auto;
+    padding: 0 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.logo-banner img {
+    height: 105px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.logo-banner img:hover {
+    opacity: 1;
+}
+
+/* Charitable Giving Focus Section Styles */
+.charitable-giving-section {
+    max-width: 1200px;
+    margin: 3rem auto 0 auto;
+    padding: 3rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.charitable-giving-title {
+    font-family: 'Akira Expanded Demo', 'Impact', 'Franklin Gothic Bold', 'Arial Black', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.charitable-giving-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333333;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.charitable-video-wrapper {
+    max-width: 100%;
+    width: 100%;
+    margin: 2rem 0 0 0;
+    padding: 0;
+}
+
+.charitable-giving-text strong {
+    color: #FFD700;
+    font-weight: 700;
+}
+
+/* Section 4: Rev Rally Section Styles */
+.section-02 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url('https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/green%20car%20-%20horizontal.avif') center center / cover no-repeat;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    display: block;
+}
+
+.section-02 .header-banner {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    position: relative;
+    z-index: 10;
+}
+
+.section-02 .banner-image {
+    width: 550px;
+    max-width: 550px;
+    height: auto;
+    display: block;
+}
+
+.section-02 .overlay-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 75vw;
+    height: auto;
+}
+
+.section-02 .text-content {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    max-width: 1600px;
+    width: 95%;
+    text-align: center;
+    color: white;
+    padding: 0 3rem;
+}
+
+.section-02 .text-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Background overlay for better contrast */
+.section-02::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+/* Section 5: Sponsorship Section Styles */
+.tach-sponsorship-wrapper {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    width: 100%;
+    background: #3a4042;
+    border: none;
+    outline: none;
+    display: block;
+    margin-top: -1px; /* Slight overlap to hide sub-pixel gaps */
+}
+
+.tach-sponsorship-wrapper * {
+    box-sizing: border-box;
+}
+
+.tach-sponsorship-section {
+    position: relative;
+    background: #3a4042;
+    padding: 4rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+
+.tach-sponsorship-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    width: 100%;
+}
+
+.tach-sponsorship-title {
+    font-family: 'Akira Expanded Demo', 'Impact', 'Franklin Gothic Bold', 'Arial Black', sans-serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #F3E11B;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 0.9;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.tach-sponsorship-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.tach-nonprofit-disclosure {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-bottom: 4rem;
+    font-style: italic;
+}
+
+.tach-arrow-icon {
+    color: #F3E11B;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.tach-cards-container {
+    display: block;
+    width: 100%;
+}
+
+.tach-cards-row-1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.tach-cards-row-2 {
+    display: block;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.tach-sponsor-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(243, 225, 27, 0.3);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    display: block;
+}
+
+.tach-sponsor-card:hover {
+    transform: translateY(-5px);
+    border-color: #F3E11B;
+    box-shadow: 0 10px 30px rgba(243, 225, 27, 0.2);
+}
+
+.tach-card-title {
+    font-family: 'Akira Expanded Demo', 'Impact', 'Franklin Gothic Bold', 'Arial Black', sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #F3E11B;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.tach-card-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.tach-sub-sponsorship-card {
+    background: rgba(243, 225, 27, 0.1);
+    border: 2px solid rgba(243, 225, 27, 0.5);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+.tach-sub-sponsorship-card .tach-card-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.tach-sub-sponsorship-card .tach-card-description {
+    font-size: 1.1rem;
+    color: white;
+}
+
+.tach-cta-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.tach-cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #CC0000;
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+}
+
+.tach-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: #AA0000;
+}
+
+/* Section 6: Rev Rally Blue Section Styles */
+.rev-rally-blue-section {
+    position: relative;
+    background: #f8f8f8;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    align-items: center;
+}
+
+.rev-rally-blue-section .content-wrapper {
+    display: contents;
+}
+
+.rev-rally-blue-section .left-content {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.rev-rally-blue-section .ferrari-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.rev-rally-blue-section .right-content {
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: #f8f8f8;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 100%;
+}
+
+.rev-rally-blue-section .rev-rally-logo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 4rem;
+}
+
+.rev-rally-blue-section .content-text {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.rev-rally-blue-section .content-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.rev-rally-blue-section .content-text p:last-child {
+    margin-bottom: 0;
+}
+
+.rev-rally-blue-section .highlight-bigger {
+    font-weight: 700;
+    color: #333;
+}
+
+.rev-rally-blue-section .highlight-drive {
+    font-weight: 700;
+    color: #333;
+}
+
+.rev-rally-blue-section .cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #CC0000;
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+    align-self: flex-start;
+}
+
+.rev-rally-blue-section .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: #AA0000;
+}
+
+/* Section 7: Tach Haus Story Section Styles */
+.tach-haus-section {
+    position: relative;
+    background: #ededed;
+    padding: 0 0 4rem 0;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.tach-haus-section .content-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+.tach-haus-section .content-text p {
+    margin-bottom: 1.2rem;
+}
+
+.tach-haus-section .content-text p:last-child {
+    margin-bottom: 0;
+}
+
+.tach-haus-section .content-text h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+.tach-haus-section .content-text h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    color: #333;
+}
+
+.tach-haus-right-content {
+    position: relative;
+    margin-top: -9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 8rem);
+}
+
+.tach-haus-feature-image {
+    width: 80%;
+    height: auto;
+}
+
+/* Footer Section Styles */
+.footer-section {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/footer%20car%20interior.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem;
+}
+
+.footer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+    width: 50vw;
+    height: auto;
+    z-index: 1;
+}
+
+.content-container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin-left: 0;
+}
+
+.disclaimer-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: white;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: white;
+    text-decoration: none;
+    margin-right: 2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #F3E11B;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: scale(0.9) translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .content-wrapper {
+        gap: 2.5rem;
+        grid-template-columns: 55% 45%;
+    }
+    
+    .feature-image {
+        width: 90%;
+    }
+
+    .tach-cards-row-1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Improved responsive breakpoints for better two-column layout */
+@media (max-width: 1400px) {
+    .content-wrapper {
+        grid-template-columns: 56% 44%;
+        gap: 3rem;
+        padding: 2rem 2.5rem 4rem 2.5rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content-wrapper {
+        grid-template-columns: 58% 42%;
+        gap: 2.5rem;
+        padding: 2rem 2rem 4rem 2rem;
+    }
+    
+    .feature-image {
+        width: 95%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .content-wrapper {
+        gap: 2rem;
+        grid-template-columns: 52% 48%;
+    }
+    
+    .right-content {
+        justify-content: center;
+    }
+    
+    .feature-image {
+        width: 100%;
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 900px) {
+    .content-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+        padding: 2rem 1.5rem 4rem 1.5rem;
+        align-items: center;
+    }
+
+    .right-content {
+        justify-content: center;
+        margin-top: 0 !important;
+    }
+    
+    .feature-image {
+        width: 100%;
+    }
+}
+
+/* Prevent layout shifts during orientation changes */
+@media screen and (orientation: landscape) and (max-width: 900px) {
+    .give-back-section .content-wrapper {
+        grid-template-columns: 1fr !important;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .give-back-section .right-content {
+        justify-content: center;
+        margin-top: 0 !important;
+    }
+}
+
+/* Additional fix for orientation change transitions */
+@media screen and (max-width: 900px) {
+    .content-wrapper {
+        transition: none !important;
+    }
+    
+    .right-content {
+        transition: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        background: linear-gradient(106deg, rgba(147, 147, 147, 0.24) 3.02%, rgba(0, 0, 0, 0.60) 99.08%), url('https://cdn.prod.website-files.com/6849cbf4d80499952e63aa00/6864a11dfa85c3959fa00423_1.avif') lightgray 50% / cover no-repeat;
+        background-attachment: scroll;
+        height: 100vh;
+        max-height: 100vh;
+    }
+
+    .nav-header {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .brand-logo {
+        bottom: 1rem;
+        right: 1.5rem;
+        width: 125px;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+        margin-top: 2rem;
+    }
+
+    .hero-title {
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .scroll-indicator {
+        bottom: 1rem;
+    }
+
+    .section-02 {
+        background: url('https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/green%20car%20vertical.avif') center center / cover no-repeat;
+        min-height: 100vh;
+        height: 100vh;
+    }
+
+    .section-02 .header-banner {
+        padding: 0 2rem;
+    }
+
+    .section-02 .banner-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .section-02 .overlay-logo {
+        width: 80vw;
+    }
+
+    .section-02 .text-content {
+        bottom: 5%;
+        width: 98%;
+        padding: 0 1rem;
+    }
+
+    .section-02 .text-content p {
+        font-size: 1rem;
+    }
+
+    .featured-video-section {
+        padding: 2rem 0;
+    }
+    
+    .video-wrapper {
+        padding: 0 1rem;
+    }
+    
+    .video-container-main {
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .featured-video-iframe {
+        border-radius: 8px;
+    }
+
+    .tach-sponsorship-content {
+        padding: 0 2rem;
+    }
+
+    .tach-sponsorship-title {
+        font-size: 2rem;
+    }
+
+    .tach-nonprofit-disclosure {
+        font-size: 0.8rem;
+    }
+
+    .tach-cards-row-1 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .tach-sponsor-card {
+        padding: 1.5rem;
+    }
+
+    .tach-card-title {
+        font-size: 1.3rem;
+    }
+
+    .rev-rally-blue-section {
+        grid-template-columns: 1fr;
+        padding-bottom: 2rem;
+    }
+
+    .rev-rally-blue-section .left-content {
+        order: 1;
+    }
+
+    .rev-rally-blue-section .right-content {
+        padding: 3rem 2rem;
+        order: 2;
+        max-width: none;
+    }
+
+    .rev-rally-blue-section .rev-rally-logo {
+        max-width: 320px;
+        margin-bottom: 2.5rem;
+    }
+
+    .rev-rally-blue-section .content-text p {
+        font-size: 1.1rem;
+    }
+
+    .tach-haus-section {
+        max-height: none;
+        overflow: visible;
+        padding: 0 0 2rem 0;
+    }
+
+    .tach-haus-right-content {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .tach-haus-feature-image {
+        width: 60%;
+        max-width: 300px;
+    }
+
+    .footer-section {
+        padding: 2rem;
+        min-height: 80vh;
+        align-items: center;
+        text-align: center;
+    }
+
+    .overlay-image {
+        width: 75vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .content-container {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .disclaimer-text {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .footer-links {
+        text-align: center;
+    }
+
+    .footer-links a {
+        font-size: 0.8rem;
+        margin-right: 1rem;
+        margin-bottom: 0;
+        display: inline;
+    }
+
+    .footer-links a:last-child {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-banner {
+        padding: 0 2rem;
+    }
+
+    .banner-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .feature-image {
+        width: 100%;
+    }
+
+    .content-text {
+        font-size: 0.95rem;
+    }
+
+    .founders-link {
+        text-align: center;
+    }
+
+    .founders-link a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .video-button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .logo-banner {
+        padding: 0 2rem;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .logo-banner img {
+        height: 80px;
+    }
+
+    .charitable-giving-section {
+        padding: 2rem;
+        margin: 2rem 1rem 0 1rem;
+        max-width: calc(100% - 2rem);
+    }
+
+    .charitable-giving-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .charitable-giving-text {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .charitable-video-wrapper {
+        margin: 1.5rem 0 0 0;
+        padding: 0;
+    }
+
+    .video-container {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .close-button {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        line-height: 1;
+    }
+    
+    .scroll-indicator {
+        bottom: 1rem;
+    }
+
+    .nav-header {
+        padding: 1rem 1rem;
+    }
+
+    .brand-logo {
+        width: 100px;
+    }
+
+    .header-banner {
+        padding: 0 1rem;
+    }
+
+    .content-wrapper {
+        padding: 2rem 1rem 4rem 1rem;
+    }
+
+    .logo-banner {
+        padding: 0 1rem;
+        gap: 1rem;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .logo-banner img {
+        height: 60px;
+    }
+
+    .charitable-giving-section {
+        padding: 1.5rem;
+        margin: 1.5rem 0.5rem 0 0.5rem;
+        max-width: calc(100% - 1rem);
+    }
+
+    .charitable-giving-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .charitable-giving-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .charitable-video-wrapper {
+        margin: 1rem 0 0 0;
+        padding: 0;
+    }
+
+    .section-02 .header-banner {
+        padding: 0 1rem;
+    }
+
+    .section-02 .overlay-logo {
+        width: 80vw;
+    }
+
+    .tach-sponsorship-content {
+        padding: 0 1rem;
+    }
+
+    .tach-sponsorship-title {
+        font-size: 1.8rem;
+    }
+
+    .tach-nonprofit-disclosure {
+        font-size: 0.75rem;
+    }
+
+    .tach-sub-sponsorship-card .tach-card-title {
+        font-size: 1.5rem;
+    }
+
+    .rev-rally-blue-section .right-content {
+        padding: 2rem 1rem;
+    }
+
+    .rev-rally-blue-section .rev-rally-logo {
+        max-width: 280px;
+        margin-bottom: 2rem;
+    }
+
+    .rev-rally-blue-section .content-text p {
+        font-size: 1rem;
+    }
+
+    .rev-rally-blue-section .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .tach-haus-feature-image {
+        width: 70%;
+        max-width: 250px;
+    }
+
+    .footer-section {
+        padding: 1.5rem;
+    }
+
+    .overlay-image {
+        width: 85vw;
+    }
+
+    .disclaimer-text {
+        font-size: 0.75rem;
+    }
+
+    .footer-links a {
+        font-size: 0.75rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .hero-section {
+        background: linear-gradient(106deg, rgba(100, 100, 100, 0.3) 3.02%, rgba(0, 0, 0, 0.75) 99.08%), url('https://pub-56b6ef6d4c0b4a89a64f22ff8b078e4a.r2.dev/images/tachhaus%20desktop%20hero.avif') lightgray 50% / cover no-repeat;
+    }
+}
+
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+    .hero-section {
+        background: linear-gradient(106deg, rgba(100, 100, 100, 0.3) 3.02%, rgba(0, 0, 0, 0.75) 99.08%), url('https://cdn.prod.website-files.com/6849cbf4d80499952e63aa00/6864a11dfa85c3959fa00423_1.avif') lightgray 50% / cover no-repeat;
+    }
+}
+
