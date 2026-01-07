@@ -101,8 +101,15 @@ function initSmoothScrolling() {
     const allNavLinks = document.querySelectorAll('.nav-link');
     allNavLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Skip external links - let them work normally
+            if (href.startsWith('http://') || href.startsWith('https://')) {
+                return;
+            }
+            
             e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
+            const targetId = href.substring(1);
             
             // Try to find by ID first
             let targetSection = document.getElementById(targetId);
