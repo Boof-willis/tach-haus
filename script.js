@@ -72,7 +72,22 @@ function initHamburgerMenu() {
 
     // Close menu when clicking on a link
     mobileLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // For external links, close menu and let the link work normally
+            if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+                if (hamburger && mobileMenu) {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    body.style.overflow = '';
+                }
+                // Don't prevent default - let the browser handle the external link
+                return;
+            }
+            
+            // For internal links, close menu
             if (hamburger && mobileMenu) {
                 hamburger.classList.remove('active');
                 mobileMenu.classList.remove('active');
@@ -103,9 +118,14 @@ function initSmoothScrolling() {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            // Skip external links - let them work normally
-            if (href.startsWith('http://') || href.startsWith('https://')) {
-                return;
+            // Skip external links - let them work normally (don't interfere at all)
+            if (!href || href.startsWith('http://') || href.startsWith('https://')) {
+                return true; // Explicitly allow default behavior
+            }
+            
+            // Only prevent default for internal anchor links
+            if (!href.startsWith('#')) {
+                return true;
             }
             
             e.preventDefault();
