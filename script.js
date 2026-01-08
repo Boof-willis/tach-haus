@@ -1,4 +1,16 @@
+// Fix mobile viewport height (100vh issue on iOS/Android)
+function setViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+setViewportHeight();
+window.addEventListener('resize', setViewportHeight);
+window.addEventListener('orientationchange', setViewportHeight);
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Set viewport height again after DOM is ready
+    setViewportHeight();
+    
     // Batch DOM operations to prevent forced reflows
     requestAnimationFrame(function() {
         // Initialize all components after layout is complete
